@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/main.cpp
+z-curve-arrays.hpp
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/z-curve-arrays.hpp
+iostream
+-
+
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/z-curve-arrays.hpp
+vector
+-
+cmath
+-
+

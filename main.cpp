@@ -2,22 +2,23 @@
 #include <iostream>
 
 int main() {
-    int N = 100, M = 100;
-    double h = 1.0/N;
-    double tau = 1.0/M;
+    int N = 100;
+    double a = 3.0;
+    double h = 0.2;
+    double tau = pow(h, 2) / a;
     ArrD<double, 2> u, v;
-    u.init(ind(N,M));
-    v.init(ind(N,M));
+    u.init(ind(N,N));
+    v.init(ind(N,N));
     for(int i = 0; i < N; i++){
-        for(int j = 0; j < M; j++){
+        for(int j = 0; j < N; j++){
             u[ind(i, j)] = 0.0;
         }
     }
-    u[ind(50,50)] = 1.0;
-    double c =  0.5 * (tau) / (h * h);
+    u[ind(N / 2,N / 2)] = 1.0;
+    double c = a * (tau) / (h * h);
     for(int t = 0; t < 100; t++){
         for(int i = 1; i < N - 1; i++){
-            for(int j = 1; j < M - 1; j++){
+            for(int j = 1; j < N - 1; j++){
                 v[ind(i, j)] = (c * (u[ind(i + 1, j)] + u[ind(i, j + 1)]+
                                u[ind(i - 1, j)] + u[ind(i, j - 1)] -
                                4 * u[ind(i, j)]) + u[ind(i, j)]);
@@ -25,13 +26,28 @@ int main() {
         }
         u = v;
     }
-    FILE *f;
-    f = fopen("ans.txt", "w");
+    FILE *x, *y, *z;
+    x = fopen("x.txt", "w");
+    y = fopen("y.txt", "w");
+    z = fopen("z.txt", "w");
     for(int i = 1; i < N-1; i++){
-        for(int j = 1; j < M-1; j++){
-            fprintf(f,"%.1lf %.1lf %lf\n", (i - 1) * h, (j - 1) * tau, u[ind(i, j)]);
+        for(int j = 1; j < N-1; j++){
+            fprintf(x,"%.1lf ", (i - 1) * h);
+            fprintf(y, "%.1lf ", (j - 1) * h);
         }
+        fprintf(x, "\n");
+        fprintf(y, "\n");
     }
+    for(int i = 1; i < N-1; i++){
+        for(int j = 1; j < N-1; j++){
+            fprintf(z,"%lf ", u[ind(i, j)]);
+        }
+        fprintf(z, "\n");
+    }
+    fclose(x);
+    fclose(y);
+    fclose(z);
+    system("/Users/germanzvezdin/Desktop/Git/SUPREMUM/SCRIPT");
     return 0;
 }
 
