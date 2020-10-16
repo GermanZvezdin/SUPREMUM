@@ -3,4 +3,4 @@ project(SUPREMUM)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(SUPREMUM main.cpp)
+add_executable(SUPREMUM main.cpp z-curve-arrays.hpp)
