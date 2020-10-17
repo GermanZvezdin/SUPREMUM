@@ -31,8 +31,6 @@ struct G {
         data[D - 1 - sizeof...(Args)] = x;
         set_V(xxx...);
     }
-
-public:
     template<typename ... Args>
     explicit G(const Args &... xxx) {
         set_V(xxx...);
