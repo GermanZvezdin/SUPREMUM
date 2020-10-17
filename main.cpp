@@ -27,7 +27,7 @@ int main() {
         }
         u = v;
     }
-    //0.391279 i -> j
+    // 0.391279 i -> j
     // 0.334201 j -> i
     std::cout <<"TIME: "<< (double)(clock() - t1)/CLOCKS_PER_SEC <<std::endl;
     FILE *x, *y, *z;
@@ -38,14 +38,10 @@ int main() {
         for(int j = 1; j < N-1; j++){
             fprintf(x,"%.1lf ", (i - 1) * h);
             fprintf(y, "%.1lf ", (j - 1) * h);
+            fprintf(z, "%lf ", u[ind(i, j)]);
         }
         fprintf(x, "\n");
         fprintf(y, "\n");
-    }
-    for(int i = 1; i < N-1; i++){
-        for(int j = 1; j < N-1; j++){
-            fprintf(z,"%lf ", u[ind(i, j)]);
-        }
         fprintf(z, "\n");
     }
     fclose(x);
