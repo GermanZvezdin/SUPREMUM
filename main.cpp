@@ -5,7 +5,7 @@ int main() {
     int N = 100;
     double a = 3.0;
     double h = 0.2;
-    double tau = pow(h, 3) / a;
+    double tau = pow(h, 2) / a;
     ArrD<double, 2> u, v;
     u.init(ind(N,N));
     v.init(ind(N,N));
