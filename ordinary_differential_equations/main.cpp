@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
     double t = 0.0;
     while(t < t_max){
         x += v * h * 0.5;
-        v += h * (-x - 2.0 * Gamma * v + A * sin(Omega * (t + h / 2)));
+        v += h * (-x - 2.0 * Gamma * v + A * sin(Omega * t));
         x += h * v * 0.5;
         printf("%lf %lf %lf\n", t, x, v);
         t+=h;
