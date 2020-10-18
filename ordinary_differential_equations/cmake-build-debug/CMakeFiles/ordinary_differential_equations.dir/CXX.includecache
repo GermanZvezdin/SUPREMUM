@@ -9,4 +9,12 @@
 /Users/germanzvezdin/Desktop/Git/SUPREMUM/ordinary_differential_equations/main.cpp
 iostream
 -
+cstdlib
+-
+algorithm
+-
+cmath
+-
+complex
+-
 
