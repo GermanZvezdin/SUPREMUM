@@ -2,17 +2,15 @@
 #include <cstdlib>
 #include <algorithm>
 #include <cmath>
-void real_solv(double gamma, double Omega = -1){
+void real_solv(double gamma, double Omega = 1){
     FILE *real_sol;
     real_sol = fopen("real_ans.txt", "w");
-    double sigma = 2.02*gamma/Omega;
     double ans;
     for(double omg = 0.1; omg < 2; omg += 0.001){
         ans = 1 / sqrt((1 - omg*omg)*(1 - omg*omg) + 4 * gamma * omg * omg * gamma);
         fprintf(real_sol, "%lf %lf\n", omg, ans);
     }
     fclose(real_sol);
-    return;
 }
 int main(int argc, char* argv[]) {
     double Gamma, Omega, A, h, t_min, t_max, x = 0.0, v = 0.0;
