@@ -19,13 +19,14 @@ int main(int argc, char *argv[]) {
     Omega = strtod(argv[1], nullptr);
     h = std::min(2.0 * M_PI / 100, 2.0 * M_PI / (Omega * 100));
     t_min = 30 / Gamma;
-    t_max = t_min + 100.0 * M_PI / Omega;
+    t_max = t_min + 30.0 * M_PI / Omega;
+    long long n = (t_max - t_min) / h;
     while (scanf("%lf %lf %lf", &t, &x, &v) > 0) {
         if(t < t_min){
             continue;
         }
-        riemann_re += (cos(Omega * (t + h / 2)) * x) / h;
-        riemann_im += (sin(Omega * (t + h / 2)) * x) / h;
+        riemann_re += (cos(Omega * (t + h / 2)) * x) / (n);
+        riemann_im += (sin(Omega * (t + h / 2)) * x) / (n);
     }
     printf("%lf \n", sqrt(pow(2 * riemann_re, 2) + pow(2 * riemann_im , 2)));
     return 0;
