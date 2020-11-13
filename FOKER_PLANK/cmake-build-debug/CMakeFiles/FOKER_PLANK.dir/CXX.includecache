@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/FOKER_PLANK/main.cpp
+iostream
+-
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/Heat Conduction Equation/z-curve-arrays.hpp
+-
+cmath
+-
+ctime
+-
+cstdlib
+-
+
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/Heat Conduction Equation/z-curve-arrays.hpp
+vector
+-
+cmath
+-
+

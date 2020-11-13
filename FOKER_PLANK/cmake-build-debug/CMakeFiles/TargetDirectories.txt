@@ -1,0 +1,3 @@
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/FOKER_PLANK/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/FOKER_PLANK/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/germanzvezdin/Desktop/Git/SUPREMUM/FOKER_PLANK/cmake-build-debug/CMakeFiles/FOKER_PLANK.dir

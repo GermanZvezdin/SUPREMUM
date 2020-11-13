@@ -51,9 +51,14 @@ public:
         for (int i = 1; i < D; i++) mul[i] = mul[i - 1] * N[i - 1];
         data.resize(N.prod());
     }
-
     T &operator[](const Ind<D> &pos) { return data[pos * mul]; }
 
     const T &operator[](const Ind<D> &pos) const { return data[pos * mul]; }
+    T &operator[](const int i){
+        return this->operator[](ind(i));
+    }
+    const T &operator[](const int i)const {
+        return this->operator[](ind(i));
+    }
 };
 #endif //SUPREMUM_Z_CURVE_ARRAYS_HPP
